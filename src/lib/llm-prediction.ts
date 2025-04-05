@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { StockTimeSeriesData } from './api';
 
-// Check if we have a Hugging Face API key
-const HUGGINGFACE_API_KEY = process.env.NEXT_PUBLIC_HUGGINGFACE_API_KEY;
+// Check if we have a Hugging Face API key - try both variables
+const HUGGINGFACE_API_KEY = process.env.NEXT_PUBLIC_HUGGINGFACE_API_KEY || process.env.HUGGINGFACE_API_KEY;
 // Model to use - text-generation model from Hugging Face
 const HUGGINGFACE_MODEL = 'mistralai/Mixtral-8x7B-Instruct-v0.1';
 
