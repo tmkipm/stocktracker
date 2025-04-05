@@ -22,9 +22,16 @@ interface StockPredictionProps {
   symbol: string;
 }
 
+// Define a type for chart data that allows null values for actual
+interface ChartDataPoint {
+  date: string;
+  actual: number | null;
+  predicted: number | null;
+}
+
 export default function StockPrediction({ prediction, symbol }: StockPredictionProps) {
   // Combine actual and predicted data for the chart
-  const chartData = prediction.dates.map((date, i) => ({
+  const chartData: ChartDataPoint[] = prediction.dates.map((date, i) => ({
     date,
     actual: prediction.actual[i],
     predicted: prediction.predicted[i]
