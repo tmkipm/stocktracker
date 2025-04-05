@@ -66,16 +66,14 @@ yarn install
 
 3. Create a `.env.local` file in the root directory with your API keys:
 ```
-# Required
-NEXT_PUBLIC_ALPHA_VANTAGE_API_KEY=your_api_key_here
+# Optional - Only needed if you want real data instead of mock data
+NEXT_PUBLIC_YAHOO_FINANCE_API_KEY=your_yahoo_finance_key_here
 
 # Choose ONE of the following for AI predictions
 NEXT_PUBLIC_HUGGINGFACE_API_KEY=your_huggingface_key_here
 # or
-# NEXT_PUBLIC_OPENAI_API_KEY=your_openai_api_key_here
+NEXT_PUBLIC_OPENAI_API_KEY=your_openai_api_key_here
 ```
-
-You can get a free Alpha Vantage API key from [Alpha Vantage](https://www.alphavantage.co/support/#api-key). For AI predictions, you can use either a Hugging Face API key from [Hugging Face](https://huggingface.co/settings/tokens) or an OpenAI API key from [OpenAI Platform](https://platform.openai.com/signup).
 
 ### Development
 
@@ -97,6 +95,29 @@ npm start
 yarn build
 yarn start
 ```
+
+### Deploying to GitHub Pages
+
+1. Create a GitHub repository for your project
+
+2. Connect your local repository to GitHub:
+```bash
+git remote add origin https://github.com/yourusername/your-repo-name.git
+```
+
+3. Push your code to GitHub:
+```bash
+git push -u origin main
+```
+
+4. Set up GitHub Pages in your repository settings:
+   - Go to your repository on GitHub
+   - Click on "Settings"
+   - Navigate to "Pages" in the sidebar
+   - Select "GitHub Actions" as the source
+   - Use the Next.js GitHub Pages workflow
+
+5. Create a `.github/workflows/nextjs.yml` file with the Next.js deployment configuration
 
 ## Technologies Used
 
